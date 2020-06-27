@@ -140,3 +140,7 @@ npm i -D husky
   }
 }
 ```
+
+## 集成 lint-staged
+
+每次提交都对所有文件执行 eslint，跑所有的单元测试实在太费时间。lint-staged 可以只对暂存起来的文件进行 lint 和单元测试。
