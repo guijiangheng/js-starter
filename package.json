@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --coverage",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint": "eslint ./lib",
+    "lint:fix": "eslint ./lib --fix"
   },
   "husky": {
     "hooks": {
@@ -15,8 +15,8 @@
   },
   "lint-staged": {
     "*.js": [
-      "npx run lint:fix",
-      "npm test -- --findRelatedTests"
+      "eslint --fix",
+      "jest --findRelatedTests"
     ]
   },
   "keywords": [],
