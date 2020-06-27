@@ -119,3 +119,24 @@ babel presets 是一个数组，里面可以指定 preset：
 以上三种写法都是等价的，数组形式的第二个元素是 preset 的参数。
 
 ## 集成 husky
+
+首先需要安装依赖，注意必须先 git init，不然不会生效。
+
+```
+npm i -D husky
+```
+
+之后再修改 package.json 文件
+
+```
+"scripts": {
+  "test": "jest --coverage",
+  "lint": "eslint .",
+  "lint:fix": "eslint . --fix"
+},
+"husky": {
+  "hooks": {
+    "pre-commit": "npm run lint:fix && npm run test"
+  }
+}
+```
